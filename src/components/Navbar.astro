@@ -1,0 +1,13 @@
+---
+const pathname = Astro.url.pathname;
+---
+<header class="site-header">
+    <nav>   
+        <div>
+            <a href="/">home</a>
+        </div>
+        <div>
+            <a href="/about" class={pathname === "/about" ? "active" : ""}>about</a>
+        </div> 	
+    </nav>
+</header>

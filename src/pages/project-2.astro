@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Carousel from "../components/Carousel.astro";
+
+const start = 9;      // empieza en 0009
+const total = 28;      // cantidad de fotos
+
+const images = Array.from({ length: total }, (_, i) => {
+  const number = String(start + i).padStart(4, "0");
+  return `/project2/Alejandro Lopez Porras_${number}.JPG`;
+});
+console.log(images)
+---
+
+<Layout>
+  <Navbar />
+
+  <main>
+    <Carousel images={images} />
+  </main>
+</Layout>

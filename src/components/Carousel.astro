@@ -1,0 +1,24 @@
+---
+const { images } = Astro.props;
+---
+
+<div class="carousel swiper">
+  <div class="swiper-wrapper">
+    {images.map((img: string | null | undefined) => (
+      <div class="swiper-slide">
+        <img src={img} alt="" />
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+
+  new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    grabCursor: true,
+  });
+</script>
