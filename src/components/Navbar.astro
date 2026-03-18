@@ -6,8 +6,12 @@ const pathname = Astro.url.pathname;
         <div>
             <a href="/">home</a>
         </div>
-        <div>
-            <a href="/about" class={pathname === "/about" ? "active" : ""}>about</a>
-        </div> 	
+        {pathname !== '/about' && (
+            <div>
+                <a href="/about">about</a>
+            </div>)
+        }
     </nav>
 </header>
+
+
